@@ -1,16 +1,20 @@
 ---
 layout: post
-title: "Training a 49-Million-Parameter Model to Match Planning Docs to OS Maps"
+title: "Sovereign AI for Greater Manchester: Geolocating 20 Years of Planning Docs with Edge-Ready Models"
 date: 2026-04-11 12:00:00
 description: "Matching planning documents to the entirety of Greater Manchester using contrastive learning and synthetic data."
 tags: machine-learning computer-vision mapping sovereign-ai
 ---
 
-**Training a single 49-million-parameter model to match planning documents to OS Maps for the entirety of Greater Manchester!**
+**Training a single 49-million-parameter model to match planning documents to Ordnance Survey Maps for the entirety of Greater Manchester!**
 
-Most plans within the past 20 years rely on data taken from Ordnance Survey (OS) mapping. Before this, people used to hand-draw buildings, roads, and trees with pencils and pens—hatching lines, hand-signing certain sections, and smudging ink. The great thing with "new" mapping is that, generally, people no longer go through this effort and use these Ordnance Survey maps instead.
+> ### 🚀 Live Interactive Demo
+> I have deployed the model to a public Hugging Face Space. You can test the 3,478-tile scale test in real-time here:  
+> **[Greater Manchester Map Matcher Live Dashboard](https://huggingface.co/spaces/ryanbrady773/greater-manchester-map-matcher)**
 
-This does raise an interesting question: can we train a system on these actual maps for the purpose of being able to place plans exactly where they belong on an official map? Any such system would need to match the visual patterns of roads, buildings, and rivers as a form of spatial fingerprinting. It feels like this is something that should be possible with relatively small compute, without the need to rely on huge multi-billion parameter models and squashing their capabilities into this niche task.
+Most plans within the past 20 years rely on data taken from Ordnance Survey (OS) mapping. Before this, people used to hand-draw buildings, roads, and trees with pencils and pens—hatching lines, hand-signing certain sections, and smudging ink. The great thing with 'new' mapping is that people generally no longer go through this effort and use these official tiles instead.
+
+This does raise an interesting question: can we train a system on these actual maps for the purpose of being able to place plans exactly where they belong on an official map? Any such system would need to match the visual patterns of roads, buildings, and rivers as a form of spatial fingerprinting. It feels like this is something that should be possible with relatively small compute, without the need to rely on huge multi-billion parameter models and squashing their capabilities into this quite niche task.
 
 Richard Sutton’s **"The Bitter Lesson"** comes to mind here; a lot of advanced prompting strategies and "agent" frameworks that many AI Engineers put together are trying to encode complexity into a process which should just be a job for deep learning to learn by itself.
 
@@ -99,7 +103,7 @@ Scaling to all of Greater Manchester—**3,478 tiles** covering a 30km × 30km a
 
 The model correctly identifies the exact 1km square more than half the time, and the correct location is in the top 5 guesses four-fifths of the time across a major metropolitan area. This is achieved with completely different rendering styles between the planning documents and reference tiles.
 
-For context, this is achieved with less than one training example per tile. The model is genuinely learning spatial features, not memorizing. Its learning by itself to ignore the noise contained in planning documents and focus on the map portion of the page for visual clues. 
+For context, this is achieved with less than one training example per tile. The model is genuinely learning spatial features, not memorizing. Its learning to ignore the noise contained in planning documents and focus on the map portion of the page for visual clues. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
