@@ -39,7 +39,7 @@ I built a synthetic document generator that produces realistic planning document
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/synth_plan.jpg" title="Synthetic Document Generation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/synth_plan.jpg" title="Synthetic Document Generation" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -93,7 +93,7 @@ Scaling to all of Greater Manchester—**3,478 tiles** covering a 30km × 30km a
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/geolocation_1" title="Greater Manchester Scale Test" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/geolocation_1" title="Greater Manchester Scale Test" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -106,7 +106,7 @@ For context, this is achieved with less than one training example per tile. The 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/geolocation_2.jpg" title="Greater Manchester Scale Test 2" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/geolocation_2.jpg" title="Greater Manchester Scale Test 2" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
