@@ -14,7 +14,7 @@ This does raise an interesting question: can we train a system on these actual m
 
 Richard Sutton’s **"The Bitter Lesson"** comes to mind here; a lot of advanced prompting strategies and "agent" frameworks that many AI Engineers put together are trying to encode complexity into a process which should just be a job for deep learning to learn by itself.
 
-First thing I like to think about when starting any AI project (and this one is no different), where is the data is going to come from to prove this out? One exciting area is the possibility of synthesising new forms of data for the purposes of training intelligent systems that generalise. Inspired by early DeepMind experiments such as AlphaGo (which learned through self-play) and their work on Atari games combined with reinforcement learning, I thought it would be interesting to gamify the process of matching planning documents back to their OS Map location. The plans should reflect what we would see in actual council plans, which might be poor scans or have distractors such as stamps and large white spaces on the page.
+First thing I like to think about when starting any AI project (and this one is no different), where is the data going to come from to prove this out? One exciting area is the possibility of synthesising new forms of data for the purposes of training intelligent systems that generalise. Inspired by early DeepMind experiments such as AlphaGo (which learned through self-play) and their work on Atari games combined with reinforcement learning, I thought it would be interesting to gamify the process of matching planning documents back to their OS Map location. The plans should reflect what we would see in actual council plans, which might be poor scans or have distractors such as stamps and large white spaces on the page.
 
 If I could train a model to recognize spatial fingerprints associated with roads, rivers, and buildings, it should be able to locate a planning document simply by looking at the map. This would mean no text reading, no ground control points, and no complex georeferencing transforms. Just visual pattern matching which is a field where deep learning models have excelled since the "AlexNet moment" way back in 2012.
 
@@ -99,7 +99,7 @@ Scaling to all of Greater Manchester—**3,478 tiles** covering a 30km × 30km a
 
 The model correctly identifies the exact 1km square more than half the time, and the correct location is in the top 5 guesses four-fifths of the time across a major metropolitan area. This is achieved with completely different rendering styles between the planning documents and reference tiles.
 
-For context, this is achieved with less than one training example per tile. The model is genuinely learning spatial features, not memorizing.
+For context, this is achieved with less than one training example per tile. The model is genuinely learning spatial features, not memorizing. Its learning by itself to ignore the noise contained in planning documents and focus on the map portion of the page for visual clues. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
