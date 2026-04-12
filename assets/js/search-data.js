@@ -16,7 +16,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-building-a-gaia-1-style-world-model-for-indoor-robot-navigation",
+        },{id: "post-training-a-49-million-parameter-model-to-match-planning-docs-to-os-maps",
+        
+          title: "Training a 49-Million-Parameter Model to Match Planning Docs to OS Maps",
+        
+        description: "Matching planning documents to the entirety of Greater Manchester using contrastive learning and synthetic data.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/manchester-planning/";
+          
+        },
+      },{id: "post-building-a-gaia-1-style-world-model-for-indoor-robot-navigation",
         
           title: "Building a GAIA-1 Style World Model for Indoor Robot Navigation",
         
