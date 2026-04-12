@@ -51,7 +51,9 @@ You could say I am creating a mini 'world' model of my own home here....we have 
 
 The model learned real spatial structure from trajectory data alone there is no 3D supervision, no depth sensors. Applying TURN_LEFT causes the scene to pan right; applying TURN_RIGHT enough steps eventually reveals a completely different part of the room.
 
-Most impressively, the model maintains "object permanence." If it pans away from the couch and then turns back, the couch reappears in the correct relative position. It hasn't just learned a video loop; it has internalized the room's geometry.
+Most impressively, the model maintains "object permanence." If it pans away from the couch and then turns back, the couch reappears in the correct relative position. It has internalized the room's geometry.
+
+Below is model generated.
 
 <div class="row justify-content-center">
     <div class="col-sm-10 col-md-8 mt-3 mt-md-0">
