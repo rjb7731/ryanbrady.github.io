@@ -8,15 +8,15 @@ tags: machine-learning computer-vision mapping sovereign-ai
 
 **Training a single 49-million-parameter model to match planning documents to OS Maps for the entirety of Greater Manchester!**
 
-Most plans within the past 20 years rely on data taken from Ordnance Survey (OS) mapping. Before this, people used to hand-draw buildings, roads, and trees with pencils and pens—hatching lines, hand-signing certain sections, and smudging ink. The great thing with "new" mapping is that, generally, people no longer go through this effort and use these maps instead.
+Most plans within the past 20 years rely on data taken from Ordnance Survey (OS) mapping. Before this, people used to hand-draw buildings, roads, and trees with pencils and pens—hatching lines, hand-signing certain sections, and smudging ink. The great thing with "new" mapping is that, generally, people no longer go through this effort and use these Ordnance Survey maps instead.
 
-This does raise the question: can we train a system on these actual maps for the purpose of being able to place plans exactly where they belong on an official map? Any such system would need to match the visual patterns of roads, buildings, and rivers as a form of spatial fingerprinting. It feels like this is something that should be possible with relatively small compute, without the need to rely on huge multi-billion parameter models and squashing their capabilities into this niche task.
+This does raise an interesting question: can we train a system on these actual maps for the purpose of being able to place plans exactly where they belong on an official map? Any such system would need to match the visual patterns of roads, buildings, and rivers as a form of spatial fingerprinting. It feels like this is something that should be possible with relatively small compute, without the need to rely on huge multi-billion parameter models and squashing their capabilities into this niche task.
 
-Richard Sutton’s **"The Bitter Lesson"** comes to mind here; a lot of these advanced prompting strategies and "agent" frameworks that many AI Engineers put together are trying to encode complexity into a process which should just be a job for deep learning to learn by itself.
+Richard Sutton’s **"The Bitter Lesson"** comes to mind here; a lot of advanced prompting strategies and "agent" frameworks that many AI Engineers put together are trying to encode complexity into a process which should just be a job for deep learning to learn by itself.
 
-First thing to think about when starting any AI projectm and this one is no different, is where the data is going to come from to prove this out. One exciting area is the possibility of synthesising new forms of data for the purposes of training intelligent systems that generalise. Inspired by early DeepMind experiments such as AlphaGo (which learned through self-play) and their work on Atari games combined with reinforcement learning, I thought it would be interesting to gamify the process of matching planning documents back to their OS Map location. The plans should reflect what we would see in actual council plans, which might be poor scans or have distractors such as stamps and large white spaces on the page.
+First thing I like to think about when starting any AI project (and this one is no different), where is the data is going to come from to prove this out? One exciting area is the possibility of synthesising new forms of data for the purposes of training intelligent systems that generalise. Inspired by early DeepMind experiments such as AlphaGo (which learned through self-play) and their work on Atari games combined with reinforcement learning, I thought it would be interesting to gamify the process of matching planning documents back to their OS Map location. The plans should reflect what we would see in actual council plans, which might be poor scans or have distractors such as stamps and large white spaces on the page.
 
-If I could train a model to recognize spatial fingerprints associated with roads, rivers, and buildings, it should be able to locate a planning document simply by looking at the map. This would mean no text reading, no ground control points, and no complex georeferencing transforms. Just visual pattern matching—a field where deep learning models have excelled since the "AlexNet moment" way back in 2012.
+If I could train a model to recognize spatial fingerprints associated with roads, rivers, and buildings, it should be able to locate a planning document simply by looking at the map. This would mean no text reading, no ground control points, and no complex georeferencing transforms. Just visual pattern matching which is a field where deep learning models have excelled since the "AlexNet moment" way back in 2012.
 
 ---
 
@@ -56,7 +56,7 @@ The model architecture is conceptually simple: a dual encoder trained with contr
 
 During training, matching pairs (a planning document and its corresponding tile) are pushed together in embedding space, while non-matching pairs are pushed apart. The model learns to ignore rendering styles, title blocks, labels, and annotations, focusing instead on the spatial features that identify a location.
 
-I utilized **ResNet50** as it meant I did not have to go through the pain and effort of teaching the model to recognize shapes and patterns from scratch. At inference time, encoding a new planning document and finding the nearest tile embedding is a single matrix multiplication—essentially instant. All my results and training have been conducted on a single MacBook Pro.
+I utilized **ResNet50** as it meant I did not have to go through the pain and effort of teaching the model to recognize shapes and patterns from scratch. At inference time, encoding a new planning document and finding the nearest tile embedding is a single matrix multiplication so essentially instant. All my results and training have been conducted on a single MacBook Pro.
 
 ---
 
@@ -117,3 +117,5 @@ For context, this is achieved with less than one training example per tile. The 
 The big takeaway here is the synthetic data pipeline. The ability to generate unlimited, perfectly-labeled planning documents from OS vector data is a powerful idea. The approach is simple enough that a single developer can build it on a laptop, and the pipeline can be retrained for any council area using freely available OS data.
 
 For councils with backlogs of modern planning documents, a tool that takes a scanned plan and says "this is located here" could be built, trained, and deployed locally for effectively zero cost. No API subscriptions, no cloud dependencies, and no per-document charges.
+
+As the model is a lean 49 million parameters, it doesn't require a high-end GPU for deployment either. In fact, the entire inference engine and the database of Manchester’s spatial fingerprints could run on a Raspberry Pi. This makes 'Sovereign AI' a reality for local government: high-performance geolocation that is offline, private, and runs on cheap & small hardware. 
