@@ -16,15 +16,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-training-a-49-million-parameter-model-to-match-planning-docs-to-os-maps",
+        },{id: "post-sovereign-ai-for-greater-manchester-geolocating-20-years-of-planning-docs-with-edge-ready-models",
         
-          title: "Training a 49-Million-Parameter Model to Match Planning Docs to OS Maps",
+          title: "Sovereign AI for Greater Manchester: Geolocating 20 Years of Planning Docs with Edge-Ready...",
         
         description: "Matching planning documents to the entirety of Greater Manchester using contrastive learning and synthetic data.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/manchester-planning/";
+            window.location.href = "/blog/2026/sovereign-ai-manchester/";
           
         },
       },{id: "post-building-a-gaia-1-style-world-model-for-indoor-robot-navigation",
